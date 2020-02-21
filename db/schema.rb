@@ -10,19 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_21_150909) do
+ActiveRecord::Schema.define(version: 2020_02_21_162309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "characters", force: :cascade do |t|
-    t.string "character_name"
-    t.string "current_armor_slot"
-    t.string "current_weapon_slot"
-    t.string "current_trinket_slot"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "examples", force: :cascade do |t|
     t.text "text", null: false
@@ -45,6 +36,10 @@ ActiveRecord::Schema.define(version: 2020_02_21_150909) do
     t.string "email", null: false
     t.string "token", null: false
     t.string "password_digest", null: false
+    t.string "character_name", null: false
+    t.string "equipped_armor_slot", null: false
+    t.string "equipped_weapon_slot", null: false
+    t.string "equipped_trinket_slot", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
