@@ -1,4 +1,4 @@
-class LoadoutsController < ApplicationController
+class LoadoutsController < OpenReadController
   before_action :set_loadout, only: [:show, :update, :destroy]
 
   # GET /loadouts
@@ -15,10 +15,10 @@ class LoadoutsController < ApplicationController
 
   # POST /loadouts
   def create
-    @loadout = Loadout.new(loadout_params)
+    @loadout = current_user.loadouts.build(loadout_params)
 
     if @loadout.save
-      render json: @loadout, status: :created, location: @loadout
+      render json: @loadout, status: :created
     else
       render json: @loadout.errors, status: :unprocessable_entity
     end
@@ -41,11 +41,11 @@ class LoadoutsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_loadout
-      @loadout = Loadout.find(params[:id])
+      @loadout = current_user.loadouts.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def loadout_params
-      params.require(:loadout).permit(:loadout_name, :armor_slot, :weapon_slot, :trinket_slot)
+      params.require(:loadout).permit(:loadout_name, :armor_slot, :weapon_slot, :trinket_slot, :user_id)
     end
 end

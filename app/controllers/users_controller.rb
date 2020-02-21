@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class UsersController < ProtectedController
+class UsersController < OpenReadController
   skip_before_action :authenticate, only: %i[signup signin]
 
   def index
@@ -62,7 +62,8 @@ class UsersController < ProtectedController
                   :character_name,
                   :equipped_armor_slot,
                   :equipped_weapon_slot,
-                  :equipped_trinket_slot)
+                  :equipped_trinket_slot,
+                  :loadouts)
   end
 
   def pw_creds
