@@ -1,0 +1,2 @@
+class Loadout < ApplicationRecord
+end
