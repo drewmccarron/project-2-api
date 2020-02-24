@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_02_21_180421) do
   end
 
   create_table "loadouts", force: :cascade do |t|
-    t.string "loadout_name"
+    t.string "loadout_name", null: false
     t.string "armor_slot"
     t.string "weapon_slot"
     t.string "trinket_slot"
@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 2020_02_21_180421) do
     t.string "email", null: false
     t.string "token", null: false
     t.string "password_digest", null: false
-    t.string "character_name", null: false
-    t.string "equipped_armor_slot", null: false
-    t.string "equipped_weapon_slot", null: false
-    t.string "equipped_trinket_slot", null: false
+    t.string "character_name"
+    t.string "equipped_armor_slot"
+    t.string "equipped_weapon_slot"
+    t.string "equipped_trinket_slot"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

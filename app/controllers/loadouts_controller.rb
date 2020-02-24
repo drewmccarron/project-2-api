@@ -39,13 +39,13 @@ class LoadoutsController < OpenReadController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_loadout
-      @loadout = current_user.loadouts.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_loadout
+    @loadout = current_user.loadouts.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def loadout_params
-      params.require(:loadout).permit(:loadout_name, :armor_slot, :weapon_slot, :trinket_slot, :user_id)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def loadout_params
+    params.require(:loadout).permit(:loadout_name, :armor_slot, :weapon_slot, :trinket_slot, :user_id)
+  end
 end
