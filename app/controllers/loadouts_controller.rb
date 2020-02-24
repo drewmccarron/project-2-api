@@ -3,7 +3,7 @@ class LoadoutsController < OpenReadController
 
   # GET /loadouts
   def index
-    @loadouts = Loadout.all
+    @loadouts = current_user.loadouts
 
     render json: @loadouts
   end
