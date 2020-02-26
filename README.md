@@ -2,7 +2,7 @@
 
 This app uses JavaScript, Ruby on Rails, Heroku, jQuery, Handlbars, and Bootstrap.
 
-[The backend respository can be found here](https://github.com/drewmccarron/project-2-api)
+[The frontend respository can be found here.](https://github.com/drewmccarron/project-2-client)
 
 
 ### Planning
