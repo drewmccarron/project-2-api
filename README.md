@@ -4,6 +4,8 @@ This app uses JavaScript, Ruby on Rails, Heroku, jQuery, Handlbars, and Bootstra
 
 [The frontend respository can be found here.](https://github.com/drewmccarron/project-2-client)
 
+[The Heroku server can be found here.](https://radiant-sea-60360.herokuapp.com/)
+
 
 ### Planning
 The first planning step was determining what app the would ultimately do. For
